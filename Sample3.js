@@ -60,40 +60,16 @@ async function fullExample()
             await actions.pause(2000);
             await browser.findElement(webdriver.By.xpath("//div[@class='applyButton doNotPrint']")).click();
             await actions.pause(2000);
-              await browser.navigate();          
+              await browser.navigate().to("https://nationwide.co.uk/products/mortgages/remortgage-to-nationwide/ready-to-apply");          
          //   await browser.switchTo().window("https://nationwide.co.uk/products/mortgages/remortgage-to-nationwide/ready-to-apply");
-            
-            var newpage = browser.findElement(webdriver.By.xpath("//h1[@class='blue boldText headingSize02  center ']"));
-            if (newpage.getText() == "Start your Remortgage application")
-                 Console.WriteLine("Mortgage recorded successfully");
+       
+            var newpage = await browser.findElement(webdriver.By.xpath("//h1[@class='blue boldText headingSize02  center ']"));
+            var text1 = await newpage.getText();
+            await actions.pause(2000);
+            if (text1 == "Start your Remortgage application")
+                console.log("Mortgage recorded successfully");
             browser.quit();
 
-           //var finalVal = window.document.body.innerText.toString();
-
-     // if(finalVal. )
-            //=="https://nationwide.co.uk/products/mortgages/remortgage-to-nationwide/ready-to-apply)")
-            //if (await newpage.getText() == "Start your Remortgage application")
-              //  console.log("Mortgage recorded successfully");
- //   await browser.switchTo().window(browser.getAllWindowHandles[0]);
-          //  await browser.findElement(webdriver.By.xpath("//h1[@class='blue boldText headingSize02  center ']")).then(function(newPage)
-           // {
-             //   console.log(newpage.getText());
-                
-          //  });
-        //   var currentUrl ;
-        //   browser.getCurrentUrl().then(function(url1)
-        //   {
-        //       currentUrl = url1;
-        //   });
-                //console.log(ang.window.document.getElementsByTagName('title')[0].innerHTML);
-             //   console.log(browser.getTitle(windows1));
-          //  await browser.switchTo().window(browser.getTitle());  
-            //var dd = browser.getPageSource();
-            //console.log(dd);         
-           // browser.navigate();    
-   //   }
-       
-            
 	}
     
     catch(e)
