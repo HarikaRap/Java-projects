@@ -60,8 +60,8 @@ async function fullExample()
             await actions.pause(2000);
             await browser.findElement(webdriver.By.xpath("//div[@class='applyButton doNotPrint']")).click();
             await actions.pause(2000);
-                        
-            await browser.switchTo().window("https://nationwide.co.uk/products/mortgages/remortgage-to-nationwide/ready-to-apply");
+              await browser.navigate();          
+         //   await browser.switchTo().window("https://nationwide.co.uk/products/mortgages/remortgage-to-nationwide/ready-to-apply");
             
             var newpage = browser.findElement(webdriver.By.xpath("//h1[@class='blue boldText headingSize02  center ']"));
             if (newpage.getText() == "Start your Remortgage application")
